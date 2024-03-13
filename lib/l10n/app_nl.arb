@@ -1,0 +1,45 @@
+{
+  "@@locale": "nl",
+  
+  "back": "Rug",
+
+  "users": "Gebruikers",
+
+  "user_details": "gebruikersdetails",
+  "more_details": "Meer details",
+
+  "settings": "Instellingen",
+  "notifications": "Meldingen",
+  "on": "Op",
+  "off": "Uit",
+  "theme": "Thema",
+  "themes": "Thema's",
+  "auto": "Auto",
+  "light_mode": "Lichte modus",
+  "dark_mode": "Donkere modus",
+  "language": "Taal",
+  "languages": "Talen",
+  "english": "Engels",
+  "dutch": "Nederlands",
+
+  "feedback": "Feedback",
+  "give_feedback": "GEEF FEEDBACK",
+  "how_we_can_improve": "Hoe kunnen wij verbeteren?",
+  "improve_design": "Verbeter het ontwerp",
+  "improve_experience": "Verbeter de ervaring",
+  "improve_functionality": "Verbeter de functionaliteit",
+  "improve_performance": "Prestatie verbeteren",
+  "briefly_describe_feedback": "Beschrijf de feedback kort",
+  "briefly_described_feedback": "Kort beschreven feedback:",
+  "type_here": "Typ hier...",
+  "submit_feedback": "Feedback verzenden",
+  "submit_feedback_validation_note": "Geef alstublieft wat feedback voordat u deze verzendt!",
+
+  "more": "Meer",
+  "privacy_policy": "Privacybeleid",
+  "share": "Deel",
+  "share_note": "Hoi! Gebruik deze Flutter-standaardsjabloon om uw nieuwe Flutter-app te ontwikkelen.\n\nhttps://www.google.com",
+  "rate_us": "Beoordeel ons",
+  "more_apps": "Meer apps",
+  "version": "Versie"
+}
