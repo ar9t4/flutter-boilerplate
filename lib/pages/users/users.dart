@@ -3,7 +3,7 @@ import 'package:flutter_boilerplate/pages/userdetails/user_details.dart';
 import 'package:flutter_boilerplate/providers/users_provider.dart';
 import 'package:flutter_boilerplate/widgets/circular_progress_bar.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_boilerplate/l10n/app_localizations.dart';
 
 import '../../model/data/remote/user.dart';
 
@@ -40,13 +40,13 @@ class _UsersPageState extends State<UsersPage> {
           Padding(
               padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
               child: Row(children: [
-                Icon(Icons.group, size: 32, color: colorScheme.onBackground),
+                Icon(Icons.group, size: 32, color: colorScheme.onSurface),
                 const SizedBox(width: 16),
                 Text(appLocalizations.users,
                     style: TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
-                        color: colorScheme.onBackground))
+                        color: colorScheme.onSurface))
               ])),
           // loader
           if (asyncResponse?.loading == true) ...[
@@ -60,8 +60,8 @@ class _UsersPageState extends State<UsersPage> {
           if (asyncResponse?.data?.isNotEmpty == true) ...[
             Expanded(
                 child: RefreshIndicator(
-                    backgroundColor: colorScheme.background,
-                    color: colorScheme.onBackground,
+                    backgroundColor: colorScheme.surface,
+                    color: colorScheme.onSurface,
                     onRefresh: () async {
                       await Future.delayed(const Duration(milliseconds: 250));
                       usersProvider.fetchUsers(onRefresh: true);
@@ -80,7 +80,7 @@ class _UsersPageState extends State<UsersPage> {
                                     shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(8)),
                                     key: Key(item?.phone ?? ''),
-                                    tileColor: colorScheme.surface,
+                                    tileColor: colorScheme.surfaceContainer,
                                     dense: true,
                                     leading: Image.network(
                                         item?.picture?.large ?? ''),

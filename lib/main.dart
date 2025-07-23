@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:flutter_boilerplate/pages/home/home.dart';
 import 'package:flutter_boilerplate/providers/app_provider.dart';
 import 'package:flutter_boilerplate/providers/more_provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_boilerplate/l10n/app_localizations.dart';
 import 'package:flutter_boilerplate/utils/color_schemes.dart';
 
 Future<void> main() async {

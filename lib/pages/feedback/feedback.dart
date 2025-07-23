@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/providers/app_provider.dart';
 import 'package:flutter_boilerplate/providers/feedback_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_boilerplate/l10n/app_localizations.dart';
 
 import '../../model/data/local/feedback_item.dart';
 
@@ -58,13 +58,13 @@ class _FeedbackPageState extends State<FeedbackPage> {
                 padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
                 child: Row(children: [
                   Icon(Icons.feedback,
-                      size: 32, color: colorScheme.onBackground),
+                      size: 32, color: colorScheme.onSurface),
                   const SizedBox(width: 16),
                   Text(appLocalizations.feedback,
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: colorScheme.onBackground))
+                          color: colorScheme.onSurface))
                 ])),
             Image.asset('assets/images/feedback.webp', width: 400, height: 200),
             Align(
@@ -78,13 +78,13 @@ class _FeedbackPageState extends State<FeedbackPage> {
                             style: TextStyle(
                                 fontSize: 24,
                                 fontWeight: FontWeight.bold,
-                                color: colorScheme.onBackground)),
+                                color: colorScheme.onSurface)),
                         const SizedBox(height: 8),
                         Text(appLocalizations.how_we_can_improve,
                             style: TextStyle(
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold,
-                                color: colorScheme.onBackground)),
+                                color: colorScheme.onSurface)),
                       ],
                     ))),
             GridView.count(
@@ -102,16 +102,16 @@ class _FeedbackPageState extends State<FeedbackPage> {
                   child: Ink(
                       decoration: BoxDecoration(
                           color: item.isSelected
-                              ? colorScheme.onBackground
-                              : colorScheme.surface,
+                              ? colorScheme.onSurface
+                              : colorScheme.surfaceContainer,
                           borderRadius: BorderRadius.circular(8)),
                       child: Center(
                         child: Text(item.name,
                             textAlign: TextAlign.center,
                             style: TextStyle(
                                 color: item.isSelected
-                                    ? colorScheme.background
-                                    : colorScheme.onSurface,
+                                    ? colorScheme.surface
+                                    : colorScheme.surfaceContainerHighest,
                                 fontSize: 12,
                                 fontWeight: FontWeight.bold)),
                       )),
@@ -126,20 +126,20 @@ class _FeedbackPageState extends State<FeedbackPage> {
                       style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: colorScheme.onBackground)),
+                          color: colorScheme.onSurface)),
                 )),
             Padding(
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 16),
               child: Container(
                 padding: const EdgeInsets.fromLTRB(16, 0, 16, 0),
                 decoration: BoxDecoration(
-                    color: colorScheme.surface,
+                    color: colorScheme.surfaceContainer,
                     borderRadius: BorderRadius.circular(8)),
                 child: TextField(
                     autofocus: false,
                     autocorrect: false,
                     focusNode: focusNode,
-                    cursorColor: colorScheme.onSurface,
+                    cursorColor: colorScheme.surfaceContainerHighest,
                     cursorHeight: 20,
                     maxLines: 5,
                     controller: controller,
@@ -171,13 +171,13 @@ class _FeedbackPageState extends State<FeedbackPage> {
                         child: ElevatedButton(
                             style: ButtonStyle(
                                 overlayColor:
-                                    MaterialStateProperty.all(Colors.grey),
-                                backgroundColor: MaterialStateProperty.all(
-                                    colorScheme.onBackground)),
+                                    WidgetStateProperty.all(Colors.grey),
+                                backgroundColor: WidgetStateProperty.all(
+                                    colorScheme.onSurface)),
                             child: Text(appLocalizations.submit_feedback,
                                 style: TextStyle(
                                     fontSize: 16,
-                                    color: colorScheme.background,
+                                    color: colorScheme.surface,
                                     fontWeight: FontWeight.bold)),
                             onPressed: () => {
                                   feedbackProvider.isValid(

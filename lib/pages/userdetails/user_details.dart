@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/model/data/remote/user.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_boilerplate/l10n/app_localizations.dart';
 
 class UserDetailsPage extends StatefulWidget {
   const UserDetailsPage({super.key});
@@ -19,22 +19,22 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
     final user = ModalRoute.of(context)?.settings.arguments as User;
     return Scaffold(
         appBar: AppBar(
-            backgroundColor: colorScheme.background,
+            backgroundColor: colorScheme.surface,
             leading: IconButton(
-              icon: Icon(Icons.arrow_back, color: colorScheme.onBackground),
+              icon: Icon(Icons.arrow_back, color: colorScheme.onSurface),
               tooltip: appLocalizations.back,
               onPressed: () => Navigator.of(context).pop(),
             ),
             title: Text(appLocalizations.user_details,
                 style: TextStyle(
                     fontSize: 20,
-                    color: colorScheme.onBackground,
+                    color: colorScheme.onSurface,
                     fontWeight: FontWeight.bold))),
         body: Column(children: [
           Container(
               width: double.infinity,
               padding: const EdgeInsets.all(24),
-              color: colorScheme.surface,
+              color: colorScheme.surfaceContainer,
               child: Column(
                 children: [
                   CircleAvatar(
@@ -44,7 +44,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                   Text(
                       '${user.name?.title} ${user.name?.first} ${user.name?.last}',
                       style: TextStyle(
-                          fontSize: 18, color: colorScheme.onSurface)),
+                          fontSize: 18, color: colorScheme.surfaceContainerHighest)),
                 ],
               )),
           Padding(
@@ -54,7 +54,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                   Text(appLocalizations.more_details,
                       style: TextStyle(
                           fontSize: 24,
-                          color: colorScheme.onBackground,
+                          color: colorScheme.onSurface,
                           fontWeight: FontWeight.bold))
                 ]),
                 const SizedBox(height: 32),
@@ -63,7 +63,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                   const SizedBox(width: 16),
                   Text(user.email ?? '',
                       style: TextStyle(
-                          fontSize: 16, color: colorScheme.onBackground))
+                          fontSize: 16, color: colorScheme.onSurface))
                 ]),
                 const SizedBox(height: 24),
                 Row(children: [
@@ -71,7 +71,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                   const SizedBox(width: 16),
                   Text(user.gender ?? '',
                       style: TextStyle(
-                          fontSize: 16, color: colorScheme.onBackground))
+                          fontSize: 16, color: colorScheme.onSurface))
                 ]),
                 const SizedBox(height: 24),
                 Row(children: [
@@ -79,7 +79,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                   const SizedBox(width: 16),
                   Text(user.dob?.date ?? '',
                       style: TextStyle(
-                          fontSize: 16, color: colorScheme.onBackground))
+                          fontSize: 16, color: colorScheme.onSurface))
                 ]),
                 const SizedBox(height: 24),
                 Row(children: [
@@ -87,7 +87,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                   const SizedBox(width: 16),
                   Text(user.location?.country ?? '',
                       style: TextStyle(
-                          fontSize: 16, color: colorScheme.onBackground))
+                          fontSize: 16, color: colorScheme.onSurface))
                 ]),
                 const SizedBox(height: 24),
                 Row(children: [
@@ -95,7 +95,7 @@ class _UserDetailsPageState extends State<UserDetailsPage> {
                   const SizedBox(width: 16),
                   Text(user.phone ?? '',
                       style: TextStyle(
-                          fontSize: 16, color: colorScheme.onBackground))
+                          fontSize: 16, color: colorScheme.onSurface))
                 ])
               ]))
         ]));

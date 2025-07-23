@@ -5,7 +5,7 @@ import 'package:flutter_boilerplate/pages/feedback/feedback.dart';
 import 'package:flutter_boilerplate/pages/more/more.dart';
 import 'package:flutter_boilerplate/providers/app_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_boilerplate/l10n/app_localizations.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -34,7 +34,7 @@ class _HomePageState extends State<HomePage> {
           currentIndex: selectedIndex,
           onTap: (value) => {appProvider.onBottomNavigationItemSelected(value)},
           type: BottomNavigationBarType.fixed,
-          selectedItemColor: colorScheme.onBackground,
+          selectedItemColor: colorScheme.onSurface,
           unselectedItemColor: Colors.grey,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(

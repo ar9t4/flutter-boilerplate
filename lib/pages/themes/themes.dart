@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/providers/settings_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_boilerplate/l10n/app_localizations.dart';
 
 class ThemesPage extends StatefulWidget {
   const ThemesPage({super.key});
@@ -27,9 +27,9 @@ class _ThemesPageState extends State<ThemesPage> {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: colorScheme.background,
+          backgroundColor: colorScheme.surface,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: colorScheme.onBackground),
+            icon: Icon(Icons.arrow_back, color: colorScheme.onSurface),
             tooltip: appLocalizations.back,
             onPressed: () => Navigator.of(context).pop(),
           ),
@@ -41,13 +41,13 @@ class _ThemesPageState extends State<ThemesPage> {
                 padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
                 child: Row(children: [
                   Icon(Icons.dark_mode,
-                      size: 32, color: colorScheme.onBackground),
+                      size: 32, color: colorScheme.onSurface),
                   const SizedBox(width: 16),
                   Text(appLocalizations.themes,
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: colorScheme.onBackground))
+                          color: colorScheme.onSurface))
                 ])),
             Expanded(
                 child: ListView.separated(
@@ -64,15 +64,15 @@ class _ThemesPageState extends State<ThemesPage> {
                   contentPadding: const EdgeInsets.only(left: 16, right: 16),
                   visualDensity:
                       const VisualDensity(horizontal: -2, vertical: 2),
-                  iconColor: colorScheme.onBackground,
-                  textColor: colorScheme.onBackground,
+                  iconColor: colorScheme.onSurface,
+                  textColor: colorScheme.onSurface,
                   onTap: () =>
                       _updateDeviceThemeSettings(appLocalizations, item.code),
                 );
               },
               separatorBuilder: (context, index) {
                 return Divider(
-                    height: 0, thickness: 0, color: colorScheme.onBackground);
+                    height: 0, thickness: 0, color: colorScheme.onSurface);
               },
             ))
           ],

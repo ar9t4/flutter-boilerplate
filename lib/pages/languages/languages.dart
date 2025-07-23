@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/providers/settings_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_boilerplate/l10n/app_localizations.dart';
 
 class LanguagesPage extends StatefulWidget {
   const LanguagesPage({super.key});
@@ -27,9 +27,9 @@ class _LanguagesPageState extends State<LanguagesPage> {
     ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: colorScheme.background,
+          backgroundColor: colorScheme.surface,
           leading: IconButton(
-            icon: Icon(Icons.arrow_back, color: colorScheme.onBackground),
+            icon: Icon(Icons.arrow_back, color: colorScheme.onSurface),
             tooltip: appLocalizations.back,
             onPressed: () => Navigator.of(context).pop(),
           ),
@@ -41,13 +41,13 @@ class _LanguagesPageState extends State<LanguagesPage> {
                 padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
                 child: Row(children: [
                   Icon(Icons.language,
-                      size: 32, color: colorScheme.onBackground),
+                      size: 32, color: colorScheme.onSurface),
                   const SizedBox(width: 16),
                   Text(appLocalizations.languages,
                       style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
-                          color: colorScheme.onBackground))
+                          color: colorScheme.onSurface))
                 ])),
             Expanded(
                 child: ListView.separated(
@@ -64,8 +64,8 @@ class _LanguagesPageState extends State<LanguagesPage> {
                   contentPadding: const EdgeInsets.only(left: 16, right: 16),
                   visualDensity:
                       const VisualDensity(horizontal: -2, vertical: 2),
-                  iconColor: colorScheme.onBackground,
-                  textColor: colorScheme.onBackground,
+                  iconColor: colorScheme.onSurface,
+                  textColor: colorScheme.onSurface,
                   onTap: () {
                     _updateDeviceLanguageSettings(
                         appLocalizations, item.locale);
@@ -74,7 +74,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
               },
               separatorBuilder: (context, index) {
                 return Divider(
-                    height: 0, thickness: 0, color: colorScheme.onBackground);
+                    height: 0, thickness: 0, color: colorScheme.onSurface);
               },
             ))
           ],

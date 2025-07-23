@@ -3,7 +3,7 @@ import 'package:flutter_boilerplate/pages/languages/languages.dart';
 import 'package:flutter_boilerplate/pages/themes/themes.dart';
 import 'package:flutter_boilerplate/providers/settings_provider.dart';
 import 'package:provider/provider.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_boilerplate/l10n/app_localizations.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -45,13 +45,13 @@ class _SettingsPageState extends State<SettingsPage> {
         Padding(
             padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
             child: Row(children: [
-              Icon(Icons.settings, size: 32, color: colorScheme.onBackground),
+              Icon(Icons.settings, size: 32, color: colorScheme.onSurface),
               const SizedBox(width: 16),
               Text(appLocalizations.settings,
                   style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: colorScheme.onBackground))
+                      color: colorScheme.onSurface))
             ])),
         Expanded(
             child: ListView.separated(
@@ -79,14 +79,14 @@ class _SettingsPageState extends State<SettingsPage> {
                           onChanged: (value) =>
                               {_toggleNotificationsSettings(appLocalizations)},
                           thumbColor:
-                              MaterialStateProperty.all(colorScheme.surface),
+                              WidgetStateProperty.all(colorScheme.surfaceContainer),
                           trackColor:
-                              MaterialStateProperty.all(colorScheme.onSurface)))
+                              WidgetStateProperty.all(colorScheme.surfaceContainerHighest)))
                   : const Icon(Icons.arrow_circle_right_outlined, size: 24),
               contentPadding: const EdgeInsets.only(left: 16, right: 16),
               visualDensity: const VisualDensity(horizontal: -2, vertical: 2),
-              iconColor: colorScheme.onBackground,
-              textColor: colorScheme.onBackground,
+              iconColor: colorScheme.onSurface,
+              textColor: colorScheme.onSurface,
               onTap: () => {
                 if (index == 0)
                   {_toggleNotificationsSettings(appLocalizations)}
@@ -99,7 +99,7 @@ class _SettingsPageState extends State<SettingsPage> {
           },
           separatorBuilder: (context, index) {
             return Divider(
-                height: 0, thickness: 0, color: colorScheme.onBackground);
+                height: 0, thickness: 0, color: colorScheme.onSurface);
           },
         ))
       ],

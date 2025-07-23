@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'dart:developer';
 import 'package:share_plus/share_plus.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_boilerplate/l10n/app_localizations.dart';
 
 class MorePage extends StatefulWidget {
   const MorePage({super.key});
@@ -44,13 +44,13 @@ class _MorePageState extends State<MorePage> {
         Padding(
             padding: const EdgeInsets.fromLTRB(16, 24, 16, 24),
             child: Row(children: [
-              Icon(Icons.more, size: 32, color: colorScheme.onBackground),
+              Icon(Icons.more, size: 32, color: colorScheme.onSurface),
               const SizedBox(width: 16),
               Text(appLocalizations.more,
                   style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.bold,
-                      color: colorScheme.onBackground))
+                      color: colorScheme.onSurface))
             ])),
         Expanded(
             child: ListView.separated(
@@ -68,8 +68,8 @@ class _MorePageState extends State<MorePage> {
                   : const Icon(Icons.arrow_circle_right_outlined, size: 24),
               contentPadding: const EdgeInsets.only(left: 16, right: 16),
               visualDensity: const VisualDensity(horizontal: -2, vertical: 2),
-              iconColor: colorScheme.onBackground,
-              textColor: colorScheme.onBackground,
+              iconColor: colorScheme.onSurface,
+              textColor: colorScheme.onSurface,
               onTap: () => {
                 if (index == 0)
                   {_openSettingsPage()}
@@ -90,7 +90,7 @@ class _MorePageState extends State<MorePage> {
           },
           separatorBuilder: (context, index) {
             return Divider(
-                height: 0, thickness: 0, color: colorScheme.onBackground);
+                height: 0, thickness: 0, color: colorScheme.onSurface);
           },
         ))
       ],
@@ -123,7 +123,7 @@ class _MorePageState extends State<MorePage> {
 
   void _openShareApp() {
     try {
-      Share.share(appLocalizations.share_note);
+      SharePlus.instance.share(ShareParams(text: appLocalizations.share_note));
     } catch (e) {
       log('Could not launch platform share');
     }
