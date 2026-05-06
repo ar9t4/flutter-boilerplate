@@ -9,10 +9,11 @@ class FeedbackProvider extends ChangeNotifier {
   var isInvalid = false;
   var feedbackItems = <FeedbackItem>[];
 
-  void fetchFeedbackItems(BuildContext context) {
+  Future<void> fetchFeedbackItems(BuildContext context) async {
     AppLocalizations appLocalizations = AppLocalizations.of(context);
     // clear previous items
     feedbackItems.clear();
+    await Future.delayed(const Duration(milliseconds: 250));
     feedbackItems.add(FeedbackItem(1, appLocalizations.improve_design, false));
     feedbackItems
         .add(FeedbackItem(2, appLocalizations.improve_experience, false));

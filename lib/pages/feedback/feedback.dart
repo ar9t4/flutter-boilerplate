@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_boilerplate/providers/app_provider.dart';
 import 'package:flutter_boilerplate/providers/feedback_provider.dart';
+import 'package:flutter_boilerplate/widgets/circular_progress_bar.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter_boilerplate/l10n/app_localizations.dart';
 
@@ -48,6 +49,9 @@ class _FeedbackPageState extends State<FeedbackPage> {
     var isInvalid = context.watch<FeedbackProvider>().isInvalid;
     var feedbackItems = context.watch<FeedbackProvider>().feedbackItems;
     ColorScheme colorScheme = Theme.of(context).colorScheme;
+    if (feedbackItems.isEmpty) {
+      return const Center(child: CircularProgressBar());
+    }
     return Scaffold(
       body: SafeArea(
           child: SingleChildScrollView(
