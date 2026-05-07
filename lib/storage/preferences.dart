@@ -1,5 +1,6 @@
 import 'dart:developer';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_boilerplate/storage/secure_storage.dart';
 
 class Preferences {
   final String hasDefaults = 'hasDefaults';
@@ -24,6 +25,9 @@ class Preferences {
         sharedPreferences.setBool(notifications, true);
         sharedPreferences.setString(theme, 'auto');
         sharedPreferences.setString(language, 'en');
+        // remove previous user session from secure storage (if any) as secure storage
+        // could/couldn't remove on app uninstall
+        await SecureStorage().removeUser();
         sharedPreferences.setBool(hasDefaults, true);
       }
     } catch (error) {

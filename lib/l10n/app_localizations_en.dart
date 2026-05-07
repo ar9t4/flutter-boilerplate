@@ -117,4 +117,10 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get version => 'Version';
+
+  @override
+  String get error => 'Error';
+
+  @override
+  String get ok => 'Ok';
 }

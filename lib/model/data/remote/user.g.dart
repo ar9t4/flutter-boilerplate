@@ -24,6 +24,8 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
           ? null
           : Picture.fromJson(json['picture'] as Map<String, dynamic>),
       nat: json['nat'] as String?,
+      token: json['token'] as String?,
+      refreshToken: json['refresh_token'] as String?,
     );
 
 Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
@@ -36,6 +38,8 @@ Map<String, dynamic> _$UserToJson(User instance) => <String, dynamic>{
       'cell': instance.cell,
       'picture': instance.picture,
       'nat': instance.nat,
+      'token': instance.token,
+      'refresh_token': instance.refreshToken,
     };
 
 Name _$NameFromJson(Map<String, dynamic> json) => Name(

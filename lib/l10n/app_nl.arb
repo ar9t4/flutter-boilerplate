@@ -41,5 +41,8 @@
   "share_note": "Hoi! Gebruik deze Flutter-standaardsjabloon om uw nieuwe Flutter-app te ontwikkelen.\n\nhttps://www.google.com",
   "rate_us": "Beoordeel ons",
   "more_apps": "Meer apps",
-  "version": "Versie"
+  "version": "Versie",
+
+  "error": "Fout",
+  "ok": "OK"
 }

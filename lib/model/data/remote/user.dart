@@ -13,17 +13,23 @@ class User {
   String? cell;
   Picture? picture;
   String? nat;
-  
-  User(
-      {this.gender,
-      this.name,
-      this.location,
-      this.email,
-      this.dob,
-      this.phone,
-      this.cell,
-      this.picture,
-      this.nat});
+  String? token;
+  @JsonKey(name: 'refresh_token')
+  final String? refreshToken;
+
+  User({
+    this.gender,
+    this.name,
+    this.location,
+    this.email,
+    this.dob,
+    this.phone,
+    this.cell,
+    this.picture,
+    this.nat,
+    this.token,
+    this.refreshToken,
+  });
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
@@ -51,7 +57,8 @@ class Location {
   String? country;
   Coordinates? coordinates;
 
-  Location({this.street, this.city, this.state, this.country, this.coordinates});
+  Location(
+      {this.street, this.city, this.state, this.country, this.coordinates});
 
   factory Location.fromJson(Map<String, dynamic> json) =>
       _$LocationFromJson(json);

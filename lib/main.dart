@@ -9,7 +9,7 @@ import 'package:flutter_boilerplate/pages/home/home.dart';
 import 'package:flutter_boilerplate/providers/app_provider.dart';
 import 'package:flutter_boilerplate/providers/more_provider.dart';
 import 'package:flutter_boilerplate/l10n/app_localizations.dart';
-import 'package:flutter_boilerplate/utils/color_schemes.dart';
+import 'package:flutter_boilerplate/core/theme/app_theme.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -36,10 +36,8 @@ class App extends StatelessWidget {
             builder: (context, settingsProvider, child) {
           return MaterialApp(
               title: 'BoilerPlate',
-              theme:
-                  ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
-              darkTheme:
-                  ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
+              theme: AppTheme.lightTheme,
+              darkTheme: AppTheme.darkTheme,
               themeMode: settingsProvider.themeMode,
               localizationsDelegates: const [
                 AppLocalizations.delegate,

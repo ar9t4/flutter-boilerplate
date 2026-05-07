@@ -117,4 +117,10 @@ class AppLocalizationsNl extends AppLocalizations {
 
   @override
   String get version => 'Versie';
+
+  @override
+  String get error => 'Fout';
+
+  @override
+  String get ok => 'OK';
 }

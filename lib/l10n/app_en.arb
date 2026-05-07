@@ -41,5 +41,8 @@
   "share_note": "Hey! Use this Flutter boilerplate template to start developing your new Flutter app.\n\nhttps://www.google.com",
   "rate_us": "Rate us",
   "more_apps": "More Apps",
-  "version": "Version"
+  "version": "Version",
+
+  "error": "Error",
+  "ok": "Ok"
 }
