@@ -2,9 +2,10 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_boilerplate/model/data/remote/user.dart';
+import 'package:flutter_boilerplate/features/users/models/user.dart';
 import 'package:flutter_boilerplate/remote/end_points.dart';
 import 'package:flutter_boilerplate/storage/secure_storage.dart';
+import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 class DioService {
   static final DioService _instance = DioService._internal();
@@ -35,8 +36,24 @@ class DioService {
         .add(InterceptorsWrapper(onRequest: _onRequest, onError: _onError));
     // recommended to add log interceptor at the end
     if (kDebugMode) {
-      _dio.interceptors
-          .add(LogInterceptor(requestBody: true, responseBody: true));
+      // _dio.interceptors.add(
+      //   LogInterceptor(
+      //     requestBody: true,
+      //     responseBody: true,
+      //   ),
+      // );
+      _dio.interceptors.add(
+        PrettyDioLogger(
+          requestHeader: true,
+          requestBody: true,
+          responseBody: true,
+          responseHeader: false,
+          error: true,
+          compact: true,
+          maxWidth: 80,
+          enabled: kDebugMode
+        ),
+      );
     }
   }
 
@@ -162,7 +179,7 @@ class DioService {
         queryParameters: queryParameters,
         options: Options(method: method, headers: mergedHeaders),
       );
-      return parser(response.data);
+      return parser(response);
     } on DioException catch (e) {
       throw _handleDioError(e);
     } catch (e) {

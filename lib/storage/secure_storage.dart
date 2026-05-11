@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:flutter_boilerplate/model/data/remote/user.dart';
+import 'package:flutter_boilerplate/features/users/models/user.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 class SecureStorage {

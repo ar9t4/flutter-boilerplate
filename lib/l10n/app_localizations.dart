@@ -98,30 +98,6 @@ abstract class AppLocalizations {
     Locale('nl')
   ];
 
-  /// No description provided for @back.
-  ///
-  /// In en, this message translates to:
-  /// **'Back'**
-  String get back;
-
-  /// No description provided for @users.
-  ///
-  /// In en, this message translates to:
-  /// **'Users'**
-  String get users;
-
-  /// No description provided for @user_details.
-  ///
-  /// In en, this message translates to:
-  /// **'User Details'**
-  String get user_details;
-
-  /// No description provided for @more_details.
-  ///
-  /// In en, this message translates to:
-  /// **'More Details'**
-  String get more_details;
-
   /// No description provided for @settings.
   ///
   /// In en, this message translates to:
@@ -314,6 +290,12 @@ abstract class AppLocalizations {
   /// **'Version'**
   String get version;
 
+  /// No description provided for @back.
+  ///
+  /// In en, this message translates to:
+  /// **'Back'**
+  String get back;
+
   /// No description provided for @error.
   ///
   /// In en, this message translates to:
@@ -325,6 +307,54 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Ok'**
   String get ok;
+
+  /// No description provided for @retry.
+  ///
+  /// In en, this message translates to:
+  /// **'Retry'**
+  String get retry;
+
+  /// No description provided for @try_again.
+  ///
+  /// In en, this message translates to:
+  /// **'Try Again'**
+  String get try_again;
+
+  /// No description provided for @some_thing_went_wrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong'**
+  String get some_thing_went_wrong;
+
+  /// No description provided for @users.
+  ///
+  /// In en, this message translates to:
+  /// **'Users'**
+  String get users;
+
+  /// No description provided for @error_get_users.
+  ///
+  /// In en, this message translates to:
+  /// **'We are unable to get users. Please try again.'**
+  String get error_get_users;
+
+  /// No description provided for @no_users_found.
+  ///
+  /// In en, this message translates to:
+  /// **'No users found.'**
+  String get no_users_found;
+
+  /// No description provided for @user_details.
+  ///
+  /// In en, this message translates to:
+  /// **'User Details'**
+  String get user_details;
+
+  /// No description provided for @more_details.
+  ///
+  /// In en, this message translates to:
+  /// **'More Details'**
+  String get more_details;
 }
 
 class _AppLocalizationsDelegate

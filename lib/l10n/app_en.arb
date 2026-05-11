@@ -1,13 +1,6 @@
 {
   "@@locale": "en",
   
-  "back": "Back",
-
-  "users": "Users",
-
-  "user_details": "User Details",
-  "more_details": "More Details",
-
   "settings": "Settings",
   "notifications": "Notifications",
   "on": "On",
@@ -43,6 +36,18 @@
   "more_apps": "More Apps",
   "version": "Version",
 
+  "back": "Back",
   "error": "Error",
-  "ok": "Ok"
+  "ok": "Ok",
+  "retry": "Retry",
+  "try_again": "Try Again",
+  "some_thing_went_wrong": "Something went wrong",
+
+  "users": "Users",
+  "error_get_users": "We are unable to get users. Please try again.",
+  "no_users_found": "No users found.",
+
+  "user_details": "User Details",
+  
+  "more_details": "More Details"
 }

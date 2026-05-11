@@ -1,7 +1,7 @@
 class EndPoints {
   // constants
   static const int pageSize = 10;
-  static const String contentType = 'application/json';
+  static const int maxPages = 10;
 
   // base
   static const String domain = "randomuser.me";
@@ -12,5 +12,5 @@ class EndPoints {
   static const String refreshToken = '/auth/refresh-token';
 
   // users
-  static const String fetchUsers = '?results=';
+  static const String getUsers = '/';
 }

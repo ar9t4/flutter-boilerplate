@@ -1,13 +1,6 @@
 {
   "@@locale": "nl",
   
-  "back": "Rug",
-
-  "users": "Gebruikers",
-
-  "user_details": "gebruikersdetails",
-  "more_details": "Meer details",
-
   "settings": "Instellingen",
   "notifications": "Meldingen",
   "on": "Op",
@@ -43,6 +36,18 @@
   "more_apps": "Meer apps",
   "version": "Versie",
 
+  "back": "Rug",
   "error": "Fout",
-  "ok": "OK"
+  "ok": "Oké",
+  "retry": "Opnieuw proberen",
+  "try_again": "Nogmaals proberen",
+  "some_thing_went_wrong": "Er is iets misgegaan",
+
+  "users": "Gebruikers",
+  "error_get_users": "We kunnen geen gebruikers ophalen. Probeer het opnieuw.",
+  "no_users_found": "Geen gebruikers gevonden.",
+
+  "user_details": "Gebruikersgegevens",
+  
+  "more_details": "Meer details"
 }

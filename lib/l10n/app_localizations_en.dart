@@ -9,18 +9,6 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get back => 'Back';
-
-  @override
-  String get users => 'Users';
-
-  @override
-  String get user_details => 'User Details';
-
-  @override
-  String get more_details => 'More Details';
-
-  @override
   String get settings => 'Settings';
 
   @override
@@ -119,8 +107,35 @@ class AppLocalizationsEn extends AppLocalizations {
   String get version => 'Version';
 
   @override
+  String get back => 'Back';
+
+  @override
   String get error => 'Error';
 
   @override
   String get ok => 'Ok';
+
+  @override
+  String get retry => 'Retry';
+
+  @override
+  String get try_again => 'Try Again';
+
+  @override
+  String get some_thing_went_wrong => 'Something went wrong';
+
+  @override
+  String get users => 'Users';
+
+  @override
+  String get error_get_users => 'We are unable to get users. Please try again.';
+
+  @override
+  String get no_users_found => 'No users found.';
+
+  @override
+  String get user_details => 'User Details';
+
+  @override
+  String get more_details => 'More Details';
 }

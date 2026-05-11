@@ -1,6 +1,9 @@
+import 'package:dio/dio.dart';
+import 'package:flutter_boilerplate/remote/end_points.dart';
 import 'package:flutter_boilerplate/remote/paginated_data.dart';
 
 class ApiResponse<T> {
+  final int httpStatusCode;
   final int statusCode;
   final String message;
   final T? data;
@@ -9,6 +12,7 @@ class ApiResponse<T> {
   final String? code;
 
   ApiResponse({
+    required this.httpStatusCode,
     required this.success,
     required this.statusCode,
     required this.message,
@@ -28,26 +32,32 @@ class ApiResponse<T> {
   }
 
   factory ApiResponse.fromJson(
-    Map<String, dynamic> json,
+    Response<dynamic> response,
     T Function(dynamic json)? fromDataJson,
   ) {
+    final httpStatusCode = response.statusCode;
+    Map<String, dynamic> json = response.data;
     return ApiResponse<T>(
+      httpStatusCode: httpStatusCode ?? 0,
       success: json['success'] ?? false,
       statusCode: json['statusCode'] ?? 0,
       message: json['message'] ?? "",
       code: json['code'] ?? "",
-      data: fromDataJson != null ? fromDataJson(json['data']) : null,
+      data: fromDataJson != null ? fromDataJson(json['results']) : null,
       errors: _parseErrors(json),
     );
   }
 
   static ApiResponse<PaginatedData<T>> paginatedFromJson<T>(
-    Map<String, dynamic> json,
+    Response<dynamic> response,
     T Function(dynamic json) fromDataJson,
   ) {
+    final httpStatusCode = response.statusCode;
+    Map<String, dynamic> json = response.data;
     final List<T> items =
-        (json['data'] as List<dynamic>).map((e) => fromDataJson(e)).toList();
+        (json['results'] as List<dynamic>).map((e) => fromDataJson(e)).toList();
     return ApiResponse<PaginatedData<T>>(
+      httpStatusCode: httpStatusCode ?? 0,
       success: json['success'] ?? false,
       statusCode: json['statusCode'] ?? 0,
       message: json['message'] ?? "",
@@ -56,7 +66,7 @@ class ApiResponse<T> {
         items: items,
         page: json['page'] ?? 1,
         limit: json['limit'] ?? items.length,
-        totalCount: json['totalCount'] ?? items.length,
+        totalCount: json['totalCount'] ?? EndPoints.pageSize * EndPoints.maxPages,
         pageSize: json['pageSize'] ?? items.length,
       ),
       errors: _parseErrors(json),

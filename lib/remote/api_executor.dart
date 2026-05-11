@@ -14,7 +14,12 @@ mixin ApiExecutor {
       onUpdateResult(Result<T>(loading: true));
       // execute api
       final response = await request();
-      if (response.statusCode == 200 || response.statusCode == 201 || response.success == true) {
+      final isSuccess = response.httpStatusCode == 200 ||
+          response.httpStatusCode == 201 ||
+          response.statusCode == 200 ||
+          response.statusCode == 201 ||
+          response.success == true;
+      if (isSuccess) {
         onSuccess(response);
       } else {
         // show error

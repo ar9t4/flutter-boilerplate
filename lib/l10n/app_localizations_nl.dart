@@ -9,18 +9,6 @@ class AppLocalizationsNl extends AppLocalizations {
   AppLocalizationsNl([String locale = 'nl']) : super(locale);
 
   @override
-  String get back => 'Rug';
-
-  @override
-  String get users => 'Gebruikers';
-
-  @override
-  String get user_details => 'gebruikersdetails';
-
-  @override
-  String get more_details => 'Meer details';
-
-  @override
   String get settings => 'Instellingen';
 
   @override
@@ -119,8 +107,36 @@ class AppLocalizationsNl extends AppLocalizations {
   String get version => 'Versie';
 
   @override
+  String get back => 'Rug';
+
+  @override
   String get error => 'Fout';
 
   @override
-  String get ok => 'OK';
+  String get ok => 'Oké';
+
+  @override
+  String get retry => 'Opnieuw proberen';
+
+  @override
+  String get try_again => 'Nogmaals proberen';
+
+  @override
+  String get some_thing_went_wrong => 'Er is iets misgegaan';
+
+  @override
+  String get users => 'Gebruikers';
+
+  @override
+  String get error_get_users =>
+      'We kunnen geen gebruikers ophalen. Probeer het opnieuw.';
+
+  @override
+  String get no_users_found => 'Geen gebruikers gevonden.';
+
+  @override
+  String get user_details => 'Gebruikersgegevens';
+
+  @override
+  String get more_details => 'Meer details';
 }
