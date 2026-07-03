@@ -173,7 +173,7 @@ abstract class AppLocalizations {
   /// No description provided for @dutch.
   ///
   /// In en, this message translates to:
-  /// **'Dutch'**
+  /// **'Dutch (Nederlands)'**
   String get dutch;
 
   /// No description provided for @feedback.

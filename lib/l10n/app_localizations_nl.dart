@@ -42,10 +42,10 @@ class AppLocalizationsNl extends AppLocalizations {
   String get languages => 'Talen';
 
   @override
-  String get english => 'Engels';
+  String get english => 'English';
 
   @override
-  String get dutch => 'Nederlands';
+  String get dutch => 'Dutch (Nederlands)';
 
   @override
   String get feedback => 'Feedback';

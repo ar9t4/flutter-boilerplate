@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_boilerplate/base/base_stateless.dart';
+import 'package:flutter_boilerplate/core/base/base_stateless.dart';
 import 'package:go_router/go_router.dart';
 
 class MainScaffold extends BaseStatelessWidget {
@@ -13,7 +13,7 @@ class MainScaffold extends BaseStatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = getColorScheme(context);
-    final localization = getLocalization(context);
+    final l10n = getLocalization(context);
     return Scaffold(
       body: navigationShell,
       bottomNavigationBar: BottomNavigationBar(
@@ -29,19 +29,19 @@ class MainScaffold extends BaseStatelessWidget {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.group),
-            label: localization.users,
+            label: l10n.users,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: localization.settings,
+            label: l10n.settings,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.feedback),
-            label: localization.feedback,
+            label: l10n.feedback,
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.more),
-            label: localization.more,
+            label: l10n.more,
           ),
         ],
       ),

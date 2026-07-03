@@ -1,11 +1,11 @@
 import 'package:flutter_boilerplate/app/main_scaffold.dart';
-import 'package:flutter_boilerplate/features/feedback/screens/feedback_screen.dart';
-import 'package:flutter_boilerplate/features/languages/screens/languages_screen.dart';
-import 'package:flutter_boilerplate/features/more/screens/more_screen.dart';
-import 'package:flutter_boilerplate/features/settings/screens/settings_screen.dart';
-import 'package:flutter_boilerplate/features/themes/screens/themes_screen.dart';
-import 'package:flutter_boilerplate/features/users/screens/user_details_screen.dart';
-import 'package:flutter_boilerplate/features/users/screens/users_screen.dart';
+import 'package:flutter_boilerplate/features/feedback/presentation/screens/feedback_screen.dart';
+import 'package:flutter_boilerplate/features/languages/presentation/screens/languages_screen.dart';
+import 'package:flutter_boilerplate/features/more/presentation/screens/more_screen.dart';
+import 'package:flutter_boilerplate/features/settings/presentation/screens/settings_screen.dart';
+import 'package:flutter_boilerplate/features/themes/presentation/screens/themes_screen.dart';
+import 'package:flutter_boilerplate/features/users/presentation/screens/user_details_screen.dart';
+import 'package:flutter_boilerplate/features/users/presentation/screens/users_screen.dart';
 import 'package:go_router/go_router.dart';
 
 GoRouter createGoRoutes() {

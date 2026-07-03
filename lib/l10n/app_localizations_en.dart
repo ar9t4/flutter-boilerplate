@@ -45,7 +45,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get english => 'English';
 
   @override
-  String get dutch => 'Dutch';
+  String get dutch => 'Dutch (Nederlands)';
 
   @override
   String get feedback => 'Feedback';
